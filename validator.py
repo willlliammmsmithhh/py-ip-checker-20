@@ -4,3 +4,6 @@ def validate(addr):
         try:
             socket.inet_pton(fam, addr)
             return True
+        except socket.error:
+            pass
+    return False
